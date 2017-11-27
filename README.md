@@ -15,14 +15,17 @@ Implementation details
 --------------
 The client opens a socket connection to the host that the user entered as a command line argument. It sets a HTTP 1.0 GET request to the host. The GET request looks like this:
 
+```
 GET /path/file.html HTTP/1.0
 
 [zero or more headers ...]
 
 [a blank line]
+```
 
 The client will parse the response from the host server. The response for a successful request looks like this:
 
+```
 HTTP/1.0 200 OK
 
 Date: Fri, 21 Nov 2017 20:51:39 GMT
@@ -46,7 +49,7 @@ Content-Length: 1354
 </body>
 
 </html>
-
+```
 
 The socket is closed when the entire file has been received.
 
